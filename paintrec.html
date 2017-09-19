@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hello World 2
+        </title>
+        <link rel="stylesheet" href="/stylesheet/style.css">
+    </head>
+
+    <body>
+        <div id="div1">
+            <script>
+            var element = document.getElementById("div1");
+            var c =document.createElement("canvas");
+
+            //指定了二维绘图
+            var ctx = c.getContext("2d"); 
+            
+            var my_gradient=ctx.createLinearGradient(0,0,175,100);
+            my_gradient.addColorStop(0,"yellow");
+            my_gradient.addColorStop(1,"red");
+            ctx.fillStyle=my_gradient;
+            ctx.fillRect(20,20,150,100);
+
+            //ctx.moveTo(20,20);
+            //ctx.lineTo(170,120);
+            ctx.moveTo(5,10);
+            ctx.lineTo(185,130);
+            ctx.stroke();
+
+            element.appendChild(c);
+
+            window.caresize=click1;
+	
+            function click1(id){
+                var element=document.getElementById("div1");
+                var w=element.clientWidth;
+                var h=element.clientHeight;
+                console.log("w: \d, h: \d",w,h);
+            }
+
+            </script>
+
+
+    </body>
+</html>
